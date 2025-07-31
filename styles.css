@@ -887,3 +887,54 @@ html {
     transform: translateY(0);
 }
 
+
+/* Package Registration Button */
+.package-registration {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid rgba(255,255,255,0.2);
+}
+
+.package-register-btn {
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    color: #1a5f3f;
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.package-register-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+}
+
+.registration-note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Mobile responsiveness for registration button */
+@media (max-width: 768px) {
+    .package-register-btn {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .package-register-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
