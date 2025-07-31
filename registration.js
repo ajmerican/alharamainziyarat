@@ -187,6 +187,49 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 5000);
     }
+
+    /**
+     * Send the completed registration data by e‑mail to the administrator.
+     *
+     * Many public websites rely on a server to process and relay form
+     * submissions. In this client‑side implementation we instead use a
+     * mailto: link to open the visitor’s default e‑mail application with
+     * a prefilled message addressed to the site admin. The subject line
+     * includes the registrant’s name (when available) and the body lists
+     * each field from the form. Once the link is triggered the user’s
+     * e‑mail client is responsible for sending the message. This approach
+     * avoids the need for a dedicated backend while still ensuring the data
+     * reaches <admin@travelsolution.ca>.
+     *
+     * @param {Object} data Key‑value pairs of the submitted form fields.
+     */
+    function sendEmail(data) {
+        const adminEmail = 'admin@travelsolution.ca';
+        const firstName = data.firstName || '';
+        const lastName = data.lastName || '';
+        // Construct a subject line with the registrant’s name for easy
+        // identification by the admin.
+        const subject = encodeURIComponent(`New Umrah Registration - ${firstName} ${lastName}`.trim());
+        // Build up the body with each form field on its own line. We encode
+        // both keys and values to avoid breaking the mailto URI.
+        let body = 'A new Umrah registration has been submitted with the following details:%0D%0A%0D%0A';
+        Object.keys(data).forEach(key => {
+            const label = encodeURIComponent(key);
+            const value = encodeURIComponent(data[key]);
+            body += `${label}: ${value}%0D%0A`;
+        });
+        const mailtoLink = `mailto:${adminEmail}?subject=${subject}&body=${body}`;
+        // Create a temporary anchor element to trigger the mailto link. Using
+        // click() rather than assigning window.location allows us to open
+        // the user’s mail client without immediately navigating away from
+        // the registration page.
+        const tempLink = document.createElement('a');
+        tempLink.href = mailtoLink;
+        tempLink.style.display = 'none';
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
+    }
     
     // Add CSS for notification animation
     const style = document.createElement('style');
@@ -246,11 +289,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Simulate form submission (in real implementation, this would send to server)
+        // Immediately trigger a mailto link to send the registration data
+        // to the site administrator. This opens the user’s default e‑mail
+        // application with a prefilled message addressed to admin@travelsolution.ca.
+        sendEmail(registrationData);
+
+        // Show the success modal after a short delay to provide feedback
+        // and simulate server processing. Once the modal appears, the
+        // registrant can close it without losing their place on the page.
         setTimeout(() => {
             submitBtn.classList.remove('loading');
             submitBtn.disabled = false;
-            
             // Show success message
             showSuccessModal(registrationData);
         }, 2000);

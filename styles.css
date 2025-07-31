@@ -49,7 +49,13 @@ body {
 }
 
 .logo {
-    height: 50px;
+    /*
+     * Increase the size of the company logo in the header so it is easier to read.
+     * The height was previously set to 50px which made the logo appear small on
+     * larger screens. Bumping this up to 70px (and letting the width scale
+     * proportionally) improves legibility while preserving the aspect ratio.
+     */
+    height: 70px;
     width: auto;
 }
 
@@ -290,6 +296,22 @@ body {
     padding: 80px 0;
     background: linear-gradient(135deg, #1a5f3f 0%, #2d8659 100%);
     color: #fff;
+}
+
+/*
+ * Improve readability of the "Featured Umrah Package" section on the green
+ * background. The default section header styles use a dark green colour
+ * intended for light backgrounds, which makes the heading and subheading
+ * difficult to see here. Override those colours within the context of the
+ * featured package to provide sufficient contrast: the main heading becomes
+ * our accent yellow and the subheading text is white.
+ */
+.featured-package .section-header h2 {
+    color: #ffd700;
+}
+
+.featured-package .section-header p {
+    color: #ffffff;
 }
 
 .package-content {
