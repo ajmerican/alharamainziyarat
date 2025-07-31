@@ -219,16 +219,16 @@ document.addEventListener('DOMContentLoaded', function() {
             body += `${label}: ${value}%0D%0A`;
         });
         const mailtoLink = `mailto:${adminEmail}?subject=${subject}&body=${body}`;
-        // Create a temporary anchor element to trigger the mailto link. Using
-        // click() rather than assigning window.location allows us to open
-        // the user’s mail client without immediately navigating away from
-        // the registration page.
-        const tempLink = document.createElement('a');
-        tempLink.href = mailtoLink;
-        tempLink.style.display = 'none';
-        document.body.appendChild(tempLink);
-        tempLink.click();
-        document.body.removeChild(tempLink);
+        // Open the mailto link in a new window or tab. Using window.open
+        // prevents the current page from being replaced and allows the
+        // confirmation modal to render properly after submission. If the
+        // visitor’s environment does not support mailto links, this call
+        // gracefully fails and the form submission still completes.
+        try {
+            window.open(mailtoLink, '_blank');
+        } catch (e) {
+            console.warn('Unable to open mail client:', e);
+        }
     }
     
     // Add CSS for notification animation

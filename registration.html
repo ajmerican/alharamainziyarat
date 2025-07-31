@@ -86,11 +86,11 @@
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="firstName">First Name *</label>
+                                <label for="firstName">Primary Applicant First Name *</label>
                                 <input type="text" id="firstName" name="firstName" required>
                             </div>
                             <div class="form-group">
-                                <label for="lastName">Last Name *</label>
+                                <label for="lastName">Primary Applicant Last Name *</label>
                                 <input type="text" id="lastName" name="lastName" required>
                             </div>
                         </div>
@@ -154,6 +154,13 @@
                                 <label for="postalCode">Postal Code *</label>
                                 <input type="text" id="postalCode" name="postalCode" required>
                             </div>
+                        </div>
+
+                        <!-- Family members field: allow registrant to list additional names at the same address. -->
+                        <div class="form-group">
+                            <label for="familyMembers">Family Members (residing at the same address)</label>
+                            <textarea id="familyMembers" name="familyMembers" rows="2" placeholder="Enter full names separated by commas"></textarea>
+                            <small style="font-size: 0.85rem; color: #666;">Optional: list any immediate family members (e.g., spouse or children) who will be travelling from the same address.</small>
                         </div>
                     </div>
 
