@@ -39,15 +39,45 @@
     </header>
 
     <!-- Success Message Section -->
-    <section class="registration-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Registration Submitted</h1>
-                <p>Thank you for registering for our Umrah with Turkey Side Tour package.</p>
-                <p>You will receive a follow‑up email from our team with payment instructions and further details.</p>
-                <a href="index.html" class="btn btn-primary" style="margin-top: 2rem;">Return to Home</a>
-            </div>
+    <style>
+        /* Custom styles for the thank you page to create a more polished
+           confirmation experience. These styles override the default hero
+           section and introduce an icon, centred text and a softer
+           background colour. */
+        .thankyou-section {
+            padding: 4rem 1rem;
+            text-align: center;
+            background: #F2FBF6;
+            color: #1a5f3f;
+        }
+        .thankyou-section .success-icon {
+            font-size: 4rem;
+            color: #27ae60;
+            margin-bottom: 1rem;
+        }
+        .thankyou-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .thankyou-section p {
+            max-width: 650px;
+            margin: 0 auto 1rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .thankyou-section .btn-primary {
+            margin-top: 2rem;
+        }
+    </style>
+    <section class="thankyou-section">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
         </div>
+        <h1>Registration Submitted</h1>
+        <p>Thank you for registering for our Umrah with Turkey Side Tour package. Your registration has been received successfully.</p>
+        <p>You will receive a follow‑up email from our team with payment instructions and further details. Please check your inbox (and spam folder) for a confirmation e‑mail.</p>
+        <a href="index.html" class="btn btn-primary">Return to Home</a>
     </section>
 
     <!-- Footer -->
