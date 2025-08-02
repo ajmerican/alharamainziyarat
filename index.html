@@ -386,25 +386,26 @@
                         <input type="hidden" name="_subject" value="New Contact Message">
                         <input type="hidden" name="_captcha" value="false">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <!-- Add name attributes so FormSubmit can capture these fields -->
+                            <input type="text" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Your Phone">
+                            <input type="tel" name="phone" placeholder="Your Phone">
                         </div>
                         <div class="form-group">
-                            <select required>
+                            <select name="service" required>
                                 <option value="">Select Service</option>
-                                <option value="umrah">Umrah Package</option>
-                                <option value="hajj">Hajj Package</option>
-                                <option value="ticketing">Flight Ticketing</option>
-                                <option value="other">Other Inquiry</option>
+                                <option value="Umrah Package">Umrah Package</option>
+                                <option value="Hajj Package">Hajj Package</option>
+                                <option value="Flight Ticketing">Flight Ticketing</option>
+                                <option value="Other Inquiry">Other Inquiry</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
