@@ -376,7 +376,13 @@
                      redirect the user back to the home page after submission.
                     -->
                     <form action="https://formsubmit.co/admin@travelsolution.ca" method="POST">
-                        <input type="hidden" name="_next" value="index.html#contact">
+                        <!--
+                         After submission redirect back to the contact section of the
+                         site. Use an absolute URL to ensure FormSubmit doesn’t
+                         default to formsubmit.co. Replace the domain with the
+                         correct production domain when deploying.
+                        -->
+                        <input type="hidden" name="_next" value="https://alharamainziyarat.com/index.html#contact">
                         <input type="hidden" name="_subject" value="New Contact Message">
                         <input type="hidden" name="_captcha" value="false">
                         <div class="form-group">

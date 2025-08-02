@@ -90,7 +90,15 @@
                 <form id="umrahRegistrationForm" class="registration-form"
                       action="https://formsubmit.co/admin@travelsolution.ca" method="POST">
                     <!-- Hidden fields required by FormSubmit -->
-                    <input type="hidden" name="_next" value="thankyou.html">
+                    <!--
+                     After a successful submission FormSubmit will redirect the user to
+                     our custom thank you page. Use an absolute URL so the service
+                     doesn’t attempt to resolve the path relative to the
+                     formsubmit.co domain (which would result in a generic
+                     FormSubmit thank you message). Replace the domain below with
+                     the final domain you host this site on.
+                    -->
+                    <input type="hidden" name="_next" value="https://alharamainziyarat.com/thankyou.html">
                     <input type="hidden" name="_subject" value="New Umrah Registration">
                     <input type="hidden" name="_captcha" value="false">
                     <!-- Personal Information -->
