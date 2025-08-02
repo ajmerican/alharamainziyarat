@@ -66,38 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Contact form handling
-const contactForm = document.querySelector('.contact-form form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const phone = this.querySelector('input[type="tel"]').value;
-        const service = this.querySelector('select').value;
-        const message = this.querySelector('textarea').value;
-        
-        // Basic validation
-        if (!name || !email || !message || !service) {
-            alert('Please fill in all required fields.');
-            return;
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address.');
-            return;
-        }
-        
-        // Show success message (in a real implementation, you would send this to a server)
-        alert('Thank you for your message! We will contact you soon.');
-        this.reset();
-    });
-}
+// Contact form handling removed
+// The contact form now posts directly to FormSubmit (configured in index.html)
+// so that messages are delivered via e-mail. Client-side validation and
+// alerts were removed to allow the native submission to proceed.
 
 // Image gallery functionality
 const galleryImages = document.querySelectorAll('.gallery-image');
