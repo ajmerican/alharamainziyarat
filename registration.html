@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umrah Registration - Al Haramain Ziyarat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="registration.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="assets/images/logo.png" alt="Travel Solution Logo" class="logo">
+                    <div class="company-info">
+                        <h2>Al Haramain Ziyarat</h2>
+                        <p>A Division of Travel Solution World Wide Inc.</p>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#umrah" class="nav-link">Umrah</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#hajj" class="nav-link">Hajj</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#ticketing" class="nav-link">Ticketing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#about" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Registration Hero Section -->
+    <section class="registration-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Umrah Registration</h1>
+                <p>Register for our Umrah with Turkey Side Tour package - October 8 to October 20, 2025</p>
+                <div class="package-highlight">
+                    <div class="price-info">
+                        <span class="price">$2989</span>
+                        <span class="per-person">per person</span>
+                    </div>
+                    <div class="dates-info">
+                        <i class="fas fa-calendar"></i>
+                        <span>October 8-20, 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="registration-form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Registration Form</h2>
+                    <p>Please fill out all required fields to register for the Umrah package</p>
+                </div>
+
+                <!--
+                 Configure the registration form to submit directly to FormSubmit so
+                 that registrations are e‑mailed to the site administrator without
+                 requiring any client‑side JavaScript. The action attribute points
+                 to the FormSubmit endpoint for the admin address, and hidden
+                 fields control the e‑mail subject, disable the default CAPTCHA
+                 and redirect registrants to a thank you page after submission.
+                -->
+                <form id="umrahRegistrationForm" class="registration-form"
+                      action="https://formsubmit.co/admin@travelsolution.ca" method="POST">
+                    <!-- Hidden fields required by FormSubmit -->
+                    <input type="hidden" name="_next" value="thankyou.html">
+                    <input type="hidden" name="_subject" value="New Umrah Registration">
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Personal Information</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Primary Applicant First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Primary Applicant Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="dateOfBirth">Date of Birth *</label>
+                                <!--
+                                 Removed the "required" attribute from the date of birth field.  Many
+                                 browsers render a native date picker which makes it difficult to
+                                 manually type a value and could block form submission if the user
+                                 cannot navigate to their birth year.  By making the field optional
+                                 we allow users to leave it blank if they cannot select a date.
+                                -->
+                                <input type="date" id="dateOfBirth" name="dateOfBirth">
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender *</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Full Address *</label>
+                            <textarea id="address" name="address" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City *</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="province">Province *</label>
+                                <select id="province" name="province" required>
+                                    <option value="">Select Province</option>
+                                    <option value="AB">Alberta</option>
+                                    <option value="BC">British Columbia</option>
+                                    <option value="MB">Manitoba</option>
+                                    <option value="NB">New Brunswick</option>
+                                    <option value="NL">Newfoundland and Labrador</option>
+                                    <option value="NS">Nova Scotia</option>
+                                    <option value="ON">Ontario</option>
+                                    <option value="PE">Prince Edward Island</option>
+                                    <option value="QC">Quebec</option>
+                                    <option value="SK">Saskatchewan</option>
+                                    <option value="NT">Northwest Territories</option>
+                                    <option value="NU">Nunavut</option>
+                                    <option value="YT">Yukon</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="postalCode">Postal Code *</label>
+                                <input type="text" id="postalCode" name="postalCode" required>
+                            </div>
+                        </div>
+
+                        <!-- Family members field: allow registrant to list additional names at the same address. -->
+                        <div class="form-group">
+                            <label for="familyMembers">Family Members (residing at the same address)</label>
+                            <textarea id="familyMembers" name="familyMembers" rows="2" placeholder="Enter full names separated by commas"></textarea>
+                            <small style="font-size: 0.85rem; color: #666;">Optional: list any immediate family members (e.g., spouse or children) who will be travelling from the same address.</small>
+                        </div>
+                    </div>
+
+                    <!-- Passport Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-passport"></i> Passport Information</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="passportNumber">Passport Number *</label>
+                                <input type="text" id="passportNumber" name="passportNumber" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="passportExpiry">Passport Expiry Date *</label>
+                                <input type="date" id="passportExpiry" name="passportExpiry" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nationality">Nationality *</label>
+                                <input type="text" id="nationality" name="nationality" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="placeOfBirth">Place of Birth *</label>
+                                <input type="text" id="placeOfBirth" name="placeOfBirth" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="saudiVisa">Do you have a valid Saudi Visa?</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="saudiVisa" value="yes">
+                                    <span class="radio-custom"></span>
+                                    Yes, I have a valid Saudi Visa
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="saudiVisa" value="no">
+                                    <span class="radio-custom"></span>
+                                    No, I need visa assistance (+$199)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Travel Preferences -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-plane"></i> Travel Preferences</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="departureCity">Departure City *</label>
+                                <select id="departureCity" name="departureCity" required>
+                                    <option value="">Select Departure City</option>
+                                    <option value="toronto">Toronto (Base Price)</option>
+                                    <option value="edmonton">Edmonton (Connecting Flight)</option>
+                                    <option value="calgary">Calgary (Connecting Flight)</option>
+                                    <option value="vancouver">Vancouver (Connecting Flight)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="roomType">Room Preference *</label>
+                                <select id="roomType" name="roomType" required>
+                                    <option value="">Select Room Type</option>
+                                    <option value="quad">Quad Occupancy (Base Price)</option>
+                                    <option value="triple">Triple Occupancy (+Extra Charge)</option>
+                                    <option value="double">Double Occupancy (+Extra Charge)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="religiousGuide">Religious Guide Preference</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="religiousGuide" value="toronto">
+                                    <span class="radio-custom"></span>
+                                    Toronto Group - Moulana Kasim Ingar (Abu Bakr Masjid, Scarborough)
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="religiousGuide" value="edmonton">
+                                    <span class="radio-custom"></span>
+                                    Edmonton Group - Moulana Muhammad Patel (Al Falah Centre, Edmonton)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialRequests">Special Requests or Medical Conditions</label>
+                            <textarea id="specialRequests" name="specialRequests" rows="3" placeholder="Please mention any dietary restrictions, medical conditions, mobility assistance, or other special requirements"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contact -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-phone-alt"></i> Emergency Contact</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="emergencyName">Emergency Contact Name *</label>
+                                <input type="text" id="emergencyName" name="emergencyName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="emergencyRelation">Relationship *</label>
+                                <input type="text" id="emergencyRelation" name="emergencyRelation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="emergencyPhone">Emergency Contact Phone *</label>
+                                <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="emergencyEmail">Emergency Contact Email</label>
+                                <input type="email" id="emergencyEmail" name="emergencyEmail">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-file-contract"></i> Terms and Conditions</h3>
+                        
+                        <div class="terms-content">
+                            <div class="terms-box">
+                                <h4>Payment Terms</h4>
+                                <ul>
+                                    <li><strong>Registration Deposit:</strong> $1,000 per person required at time of registration</li>
+                                    <li><strong>Payment Method:</strong> E-transfer to admin@travelsolution.ca</li>
+                                    <li><strong>Non-Refundable Amount:</strong> $500 per person is non-refundable upon registration</li>
+                                    <li><strong>Final Payment:</strong> Remaining balance must be paid in full before August 7, 2025</li>
+                                    <li><strong>Late Payment:</strong> Failure to pay by August 7, 2025 may result in cancellation of booking</li>
+                                </ul>
+                            </div>
+
+                            <div class="terms-box">
+                                <h4>Cancellation Policy</h4>
+                                <ul>
+                                    <li><strong>15 Days Before Departure:</strong> No refund will be provided for cancellations within 15 days of departure for any reason</li>
+                                    <li><strong>15-30 Days Before Departure:</strong> Partial refund will be provided (subject to airline and hotel cancellation policies)</li>
+                                    <li><strong>More than 30 Days Before Departure:</strong> Refund will be provided minus the $500 non-refundable deposit and any applicable cancellation fees</li>
+                                    <li><strong>Force Majeure:</strong> No refund for cancellations due to circumstances beyond our control (natural disasters, government restrictions, etc.)</li>
+                                </ul>
+                            </div>
+
+                            <div class="terms-box">
+                                <h4>Additional Terms</h4>
+                                <ul>
+                                    <li>All prices are based on current exchange rates and are subject to change</li>
+                                    <li>Travel insurance is highly recommended and not included in the package</li>
+                                    <li>Valid passport with minimum 6 months validity required</li>
+                                    <li>Saudi visa fee ($199) is additional for Canadian passport holders without existing visa</li>
+                                    <li>Accommodation assignments are subject to availability and may change</li>
+                                    <li>Package inclusions are as specified and subject to terms of service providers</li>
+                                    <li>Al Haramain Ziyarat reserves the right to modify itinerary due to unforeseen circumstances</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="agreement-checkboxes">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                <span class="checkbox-custom"></span>
+                                I have read and agree to all the terms and conditions stated above *
+                            </label>
+
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreePayment" name="agreePayment" required>
+                                <span class="checkbox-custom"></span>
+                                I understand that a $1,000 deposit per person is required via e-transfer to admin@travelsolution.ca, with $500 being non-refundable *
+                            </label>
+
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeCancellation" name="agreeCancellation" required>
+                                <span class="checkbox-custom"></span>
+                                I understand the cancellation policy and refund terms *
+                            </label>
+
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeMarketing" name="agreeMarketing">
+                                <span class="checkbox-custom"></span>
+                                I agree to receive marketing communications about future travel packages and services
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-submit">
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Registration
+                        </button>
+                        <p class="submit-note">
+                            After submitting this form, you will receive an email with payment instructions for your $1,000 deposit.
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="registration-contact">
+                <h3>Need Help with Registration?</h3>
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <h4>Toronto Office</h4>
+                        <p><i class="fas fa-user"></i> Saurin (Suhail) Ajmeri</p>
+                        <p><i class="fas fa-phone"></i> 780-803-8076</p>
+                        <p><i class="fab fa-whatsapp"></i> WhatsApp Available</p>
+                    </div>
+                    <div class="contact-card">
+                        <h4>Edmonton Office</h4>
+                        <p><i class="fas fa-user"></i> Moulana Muhammad Patel</p>
+                        <p><i class="fas fa-phone"></i> 705-618-9566</p>
+                        <p><i class="fab fa-whatsapp"></i> WhatsApp Available</p>
+                    </div>
+                </div>
+                <div class="payment-info">
+                    <h4>Payment Information</h4>
+                    <p><strong>E-transfer to:</strong> admin@travelsolution.ca</p>
+                    <p><strong>Amount:</strong> $1,000 per person</p>
+                    <p><strong>Note:</strong> Please include your full name and "Umrah Registration" in the transfer message</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="Travel Solution Logo">
+                        <div>
+                            <h3>Al Haramain Ziyarat</h3>
+                            <p>A Division of Travel Solution World Wide Inc.</p>
+                        </div>
+                    </div>
+                    <p>Your trusted partner for spiritual journeys and worldwide travel services.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html#umrah">Umrah Packages</a></li>
+                        <li><a href="index.html#hajj">Hajj Services</a></li>
+                        <li><a href="index.html#ticketing">Flight Ticketing</a></li>
+                        <li><a href="index.html#contact">Travel Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="registration.html">Umrah Registration</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><strong>Toronto:</strong> 780-803-8076</p>
+                        <p><strong>Edmonton:</strong> 705-618-9566</p>
+                        <p>Call/WhatsApp Available</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Al Haramain Ziyarat - A Division of Travel Solution World Wide Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Removed the custom registration.js script. FormSubmit will handle
+         submission and e‑mail delivery server‑side. If additional client‑side
+         behaviours (such as field formatting) are needed they can be
+         reintroduced in a separate script without preventing the default
+         submission. -->
+</body>
+</html>
+
