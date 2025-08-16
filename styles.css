@@ -658,26 +658,19 @@ body {
     margin-bottom: 2rem;
 }
 
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.footer-company-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4a9eff;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.footer-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #b8e6d1;
     margin-bottom: 1rem;
-}
-
-.footer-logo img {
-    height: 40px;
-    width: auto;
-}
-
-.footer-logo h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-.footer-logo p {
-    font-size: 0.9rem;
-    opacity: 0.8;
 }
 
 .footer-section h4 {
@@ -703,6 +696,28 @@ body {
 
 .footer-section a:hover {
     color: #ffd700;
+}
+
+.associations-text {
+    color: #b8e6d1;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.association-logos {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.association-logo-img {
+    height: 40px;
+    width: auto;
+    background: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .footer-contact p {
