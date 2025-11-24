@@ -975,3 +975,84 @@ html {
     }
 }
 
+
+/* New Hajj Section Styles for Spiritual Guides */
+.spiritual-guide-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.spiritual-guide-section .section-header {
+    margin-bottom: 2rem;
+}
+
+.spiritual-guide-section .section-header h3 {
+    font-size: 1.8rem;
+    color: #1a5f3f;
+}
+
+.spiritual-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.guide-card {
+    padding: 1rem;
+    border-radius: 10px;
+    background: #f4f4f4;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.guide-silhouette {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc; /* Placeholder for the silhouette image */
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+.guide-card p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    color: #333;
+}
+
+.guide-card strong {
+    font-weight: 600;
+    color: #1a5f3f;
+}
+
+.hajj-note {
+    background: #f8fffe;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #ffd700;
+    margin-top: 2rem;
+}
+
+.hajj-note p {
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-size: 1rem;
+}
+
+.hajj-note strong {
+    color: #1a5f3f;
+}
+
+/* Responsive adjustments for Hajj section */
+@media (max-width: 768px) {
+    .hajj-content {
+        grid-template-columns: 1fr;
+    }
+    .hajj-image {
+        order: -1; /* Move image above text on mobile */
+    }
+    .spiritual-guide-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
